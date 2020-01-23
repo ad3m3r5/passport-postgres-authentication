@@ -1,0 +1,26 @@
+<%- include('partials/header') %>
+
+            <div class="mainForm">
+                <h1>Register</h1>
+                <form action="/register" method="POST">
+                    <p>Username: 4-16 characters, a-Z, 0-9, underscores, and dashes</p>
+                    <p>Pasword: 8-128 characters, REQUIRES 1 lowercase, uppercase, and digit</p>
+
+                    <label for="username">Username: </label>
+                    <input type="text" id="username" name="username" autofocus>
+                    <br />
+
+                    <label for="password">Password: </label>
+                    <input type="password" id="password" name="password">
+                    <br />
+
+                    <label for="passConf">Confirm Password: </label>
+                    <input type="password" id="passConf" name="passConf">
+                    <br /><br />
+
+                    <input class="submitButton" type="submit" value="REGISTER">
+                </form>
+                <p>Or <a href="/login">login</a> if you already have an account.</p>
+            </div>
+
+<%- include('partials/footer') %>

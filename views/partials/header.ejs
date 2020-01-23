@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <title><%= title %></title>
+
+        <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+        <style>
+            html { margin: 0; padding: 0; font-family: 'Roboto', sans-serif; }
+            body { text-align: center; margin: 0; padding: 0; }
+            .main { width: 80%; margin: 0 auto; margin-top: 50px; }
+            a { color: blue; text-decoration: underline; }
+            nav { margin: 0 auto; padding: 15px 25px; background: steelblue; }
+            .links { list-style-type: none; margin: 0; padding: 0; }
+            .links li { display: inline-block; background: lightgrey; border: 1px solid lightgrey; border-radius: 5px; }
+            .links li a { display: block; padding: 8px 15px; background: lightgrey}
+            .message { margin: 0 auto; margin-top: 25px; margin-bottom: 35px; padding: 20px 10px; background: dodgerblue; text-align: center; color: lightgrey; font-size: 20px; max-width: 400px; border: 2px solid grey; border-radius: 8px; }
+            form input { display: inline-block; border-radius: 8px; border: none; outline: none; padding: 8px; }
+            form input:focus { box-shadow: 0 0 5px steelblue; }
+            form label { display: inline-block; }
+            .mainForm { margin: 0 auto; max-width: 400px; background-color: lightgrey; padding: 15px 10px; border-radius: 10px; }
+            .submitButton { color: white; background: steelblue; border: none; border-radius: 6px; padding: 8px 10px; }
+            .submitButton:hover { background-color: #138496; cursor: pointer; }
+            .submitButton:focus { outline: none; border: none; }
+            input { display: block; padding: 4px 2px; margin: 0 auto; margin-bottom: 8px; }
+            .profile { max-width: 700px; margin: 0 auto; }
+            .userInfo { margin: 75px 0px; text-align: left; }
+            .userTitle { font-size: 1.3rem; }
+            .userName { font-size: 20px; }
+            .collapsible { max-width: 700px; background-color: #777; color: white; cursor: pointer; padding: 18px; width: 100%; border: none; text-align: left; outline: none; font-size: 22px; }
+            .collapsible:hover, .active { background-color: #555; }
+            .collapsible h4 { margin: 0; margin-bottom: 0px; }
+            .collContent { max-width: 700px; margin: 0 auto; padding: 20px 20px; display: none; overflow: hidden; background-color: lightgrey; }
+            .collContent form { margin: 10px 0px; }
+        </style>
+    </head>
+    <body>
+
+        <nav class="nav">
+            <ul class="links">
+                <% if (user) { %>
+                <li><a href="/">Home</a></li>
+                <li><a href="/profile">Profile</a></li>
+                <li><a href="/logout">Logout</a></li>
+                <% } else { %>
+                <li><a href="/login">Login</a></li>
+                <li><a href="/register">Register</a></li>
+                <% } %>
+            </ul>
+        </nav>
+
+        <div class="main">
+            <% if(typeof message !== 'undefined' && message && message.length > 0) { %>
+                <div class="message"><%= message %></div>
+            <% } %>

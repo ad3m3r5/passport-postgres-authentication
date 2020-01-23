@@ -1,0 +1,47 @@
+<%- include('partials/header') %>
+
+            <div class="profile"> 
+                <h1>Profile</h1>
+
+                <div class="userInfo">
+                    <p><span class="userTitle">Username: </span><span class="userName"><%- user.username %></span></p>
+                </div>
+
+                <button type="button" class="collapsible"><h4>Update Password</h4></button>
+                <div class="collContent" style="display:none;">
+                    <form action="/updpass" method="POST">
+                        <p>Requirements: 8-128 characters, requires 1 lowercase, uppercase, and digit</p>
+                        <label for="password">Current Password: </label>
+                        <input type="password" id="password" name="password">
+                        <br />
+
+                        <label for="newpass">New Password : </label>
+                        <input type="password" id="newpass" name="newpass">
+                        <br />
+
+                        <label for="newpassconf">Confirm New Password: </label>
+                        <input type="password" id="newpassconf" name="newpassconf">
+                        <br /><br />
+
+                        <input class="submitButton" type="submit" value="UPDATE">
+                    </form>
+                </div>
+
+            </div>
+
+            <script>
+                var coll = document.getElementsByClassName("collapsible");
+                for (i = 0; i < coll.length; i++) {
+                    coll[i].addEventListener("click", function() {
+                        this.classList.toggle("active");
+                        var content = this.nextElementSibling;
+                        if (content.style.display === "block") {
+                            content.style.display = "none";
+                        } else {
+                            content.style.display = "block";
+                        }
+                    });
+                }
+            </script>
+
+<%- include('partials/footer') %>
