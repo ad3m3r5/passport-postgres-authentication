@@ -26,11 +26,11 @@ WITH (oids = false);
 
  4. Create the file .env, which will store database connection information. Add the following variables using your respective values.
 
-> PGHOST=<postgres_host>
-PGPORT=<postgres_port>
-PGDATABASE=<database_name>
-PGUSER=<postgres_username>
-PGPASSWORD=<postgres_password>
+> PGHOST=<postgres_host>  
+PGPORT=<postgres_port>  
+PGDATABASE=<database_name>  
+PGUSER=<postgres_username>  
+PGPASSWORD=<postgres_password>  
 
  5. Run the application
 
