@@ -1,2 +1,25 @@
-node_modules
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependency directories
+node_modules/
+
+# Optional npm cache directory
+.npm
+
+# Yarn Integrity file
+.yarn-integrity
+
+# dotenv environment variables file
 .env
+.env.test
+.env.production
+
+# yarn v2
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+.pnp.*
